@@ -1,103 +1,128 @@
-body{
-  font-family: Arial;
-  background-color: #f4f4f4;
-  padding: 30px;
-  color: #333;
-  background-image: url("./img/luca-micheli-r9RW20TrQ0Y-unsplash.jpg");
-  background-size: cover;
-  background-position: center;
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    padding: 50px;
+    color: #333;
+    background-image: url("./img/constellations-2609647.jpg");
+    background-size: cover;
+    background-position: center;
+    max-height: auto;
 }
-.app{
+
+.app {
     max-width: 600px;
     margin: 0 auto;
-    background-color: #efefef;
-    padding: 20px 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
     border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
-h1{
-    margin-bottom: 20px;
+
+h1 {
+    margin-bottom: 30px;
     text-align: center;
+    color: #333974;
+    font-size: 36px;
 }
-h2{
-    margin-bottom: 10px;
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #2a065f;
 }
-p{
-    margin-bottom: 10px;
+
+p {
+    margin-bottom: 20px;
+    line-height: 1.6;
 }
+
+
+select {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
 input{
-    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 96%;
+    transition: border-color 0.3s ease;
 }
-button{
-    padding: 5px 10px;
+
+input:focus,
+select:focus {
+    border-color: #333;
+}
+
+button {
+    padding: 10px 20px;
     margin-right: 10px;
     border: none;
     background-color: #333974;
     color: #fff;
     cursor: pointer;
-    border-radius: 3px;
-    transition: 0.3s;
-    opacity: 0.9;
-
-}
-
-button:hover{
-    opacity: 1;
-}
-
-.todo-list{
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #555;
-}
-
-.todo{
-   
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    padding: 10px;
-    margin-bottom: 10px;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2a065f;
+}
+
+.todo-list {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #333974;
+}
+
+.todo {
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
     display: flex;
-    justify-content: space-between ;
+    justify-content: space-between;
     align-items: center;
 }
 
-.remove{
-    background-color: #ff0000;
-}
-
-
-.complete{
-    background-color:#5Cb85c ;
- }
- ```
-
-.todoForm{
-    padding-bottom: 1.5rem;
-}
-
-input, select{
-   padding: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    width: 100%;
-}
-
-.filter, .search{
-    border-bottom:1px solid #555;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-}
-
-.filter-options{
+.todoForm {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    gap: 3rem;
+    margin-bottom: 20px;
 }
 
-.filter-options div{
-    flex: 1 1 0;    
-                                                     
+.remove {
+    background-color: #b03939;
 }
 
+.complete {
+    background-color: #3d7f3d;
+}
+
+.search input {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.addTaskBtn {
+    flex-shrink: 0;
+    padding: 10px 20px;
+    border: none;
+    background-color: #333974;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.addTaskBtn:hover {
+    background-color: #2a065f;
+}

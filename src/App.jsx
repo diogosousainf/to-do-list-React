@@ -12,17 +12,17 @@ function App() {
 
     const [todos, setTodos] = useState([
         { id:1,
-          title: 'Criar funcionalidade x no sistema',
-            category: 'Trabalho',
-          done: false,
-        },
-        { id:2,
-          title: 'Ir ao supermercado',
+          title: 'Ir ao banco',
             category: 'Pessoal',
           done: false,
         },
+        { id:2,
+          title: 'Ir trabalhar',
+            category: 'Trabalho',
+          done: false,
+        },
         { id:3,
-          title: 'Estudarr React',
+          title: 'Estudar Laravel',
             category: 'Estudo',
           done: false,
         },
@@ -30,6 +30,9 @@ function App() {
     ]);
 
     const [search, setSearch] = useState("");
+
+    const [filter, setFilter] = useState("All");
+    const [order, setSort] = useState("Asc");
 
     const addTodo = (text, category) => {
         const newTodos = [...todos,
@@ -63,11 +66,24 @@ function App() {
         <div className="app">
             <h1>Lista de tarefas</h1>
             <Search search={search} setSearch={setSearch}/>  
-            <Filter />
+            <Filter filter={filter} setFilter={setFilter} setSort={setSort} />
             <div className="todo-list">
                 {todos
-                  .filter((todo) =>
-                  todo.title.toLowerCase().includes(search.toLowerCase()))
+                .filter((todo) => 
+                  filter ==="All" 
+                  ? todo : filter === "Completed"
+                   ? todo.done : 
+                   !todo.done)
+                .filter((todo) =>
+                  todo.title.toLowerCase().includes(search.toLowerCase())
+                  )
+                
+                .sort((a, b) => 
+                  order === "Asc" 
+                  ? a.title.localeCompare(b.title) 
+                  : b.title.localeCompare(a.title)
+                  )
+                  
                 .map((todo) => (
                   <Todo
                    key={todo.id} 
